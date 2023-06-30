@@ -1,0 +1,25 @@
+html {
+    height: -webkit-fill-available;
+   
+  }
+
+  body{
+    font-family: 'Nunito', sans-serif;
+  }
+  
+  main {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100vh;
+    height: -webkit-fill-available;
+    max-height: 100vh;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  li:hover{
+    background-color: #18A5FF;
+  }
+
+  
+  

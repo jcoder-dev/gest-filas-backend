@@ -1,0 +1,96 @@
+body{
+  font-family: 'Nunito', sans-serif;
+}
+
+.container {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .senha-atual {
+      flex: 1;
+      background-color: #18A5FF;
+      padding: 20px;
+      color: #ffffff;
+      border-radius: 10px;
+    }
+
+    .senha-atual .senha-chamada{
+      margin-bottom: 10px;
+      width: 300px;
+      height: 235px;
+    }
+    
+    .senha-atual .proxima-senha{
+      width: 300px;
+      height: 200px;
+    }
+
+    .senha-chamada p, .proxima-senha p{
+      text-align: center;
+      font-size: 20px;
+    }
+
+    .senha-atual h2 {
+      margin-top: 0;
+      justify-content: center;
+      align-items: center;
+      margin-left: 80px;
+      color: #ffffff;
+      font-size: 30px;
+    }
+    
+    .atendimento,
+    .ultimas-senhas {
+      flex: 1;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    
+    .atendimento h2,
+    .ultimas-senhas h2 {
+      margin-top: 0;
+      justify-content: center;
+      align-items: center;
+      margin-left: 80px;
+      color: #18A5FF;
+      font-size: 30px;
+    }
+    
+    .atendimento ul,
+    .ultimas-senhas ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    
+    .atendimento li,
+    .ultimas-senhas li {
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 10px;
+    }
+    
+    .atendimento li > div,
+    .ultimas-senhas li > div {
+      width: 100px;
+      height: 55px;
+    }
+    
+    .atendimento p,
+    .ultimas-senhas p {
+      font-size: 30px;
+      white-space: nowrap; 
+      justify-content: space-between;
+    }
+  
+  .atendimento span,
+  .ultimas-senhas span {
+    flex: 1;
+  }
+    
+    .atendimento p:first-child,
+    .ultimas-senhas p:first-child {
+      margin-right: 10px;
+    }

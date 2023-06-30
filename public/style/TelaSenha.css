@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+#btn-custom {
+    width: 150px;
+    height: 150px;
+}
+
+
+@media screen and (max-width: 576px) {
+    #btn-custom {
+        width: 75px;
+        height: 75px;
+    }
+}
+
+.esconder{
+    display: none;
+}
+
+.mostrar{
+    display: block;
+
+}
