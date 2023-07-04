@@ -36,6 +36,12 @@ Route::get('/selecionar-servico', function(){
 // Rotas de Funcionário
 
 Route::get('/funcionario', [FuncionarioController::class, 'index'])->name('gestao-funcionario');
+Route::post('/funcionario/adicionar', [FuncionarioController::class, 'adicionar'])->name('adicionar-funcionario');
+Route::put('/funcionario', [FuncionarioController::class, 'editar'])->name('editar-funcionario');
+Route::delete('/funcionario', [FuncionarioController::class, 'editar'])->name('deletar-funcionario');
+
+
+
 
 
 Route::post('/funcionario', function (){
