@@ -10,7 +10,17 @@
 							Adicionar Novo Funcionário
 						</div>
 						<div class="card-body">
-							<form class="row g-3">
+                            @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+							<form class="row g-3" method="POST" action="{{ route('adicionar-funcionario') }}">
+                                @csrf
 								<div class="col-md-6">
 									<label for="nome" class="form-label">Nome</label>
 									<input type="text" class="form-control" id="nome" name="nome">
@@ -19,6 +29,23 @@
 									<label for="sobrenome" class="form-label">Sobrenome</label>
 									<input type="text" class="form-control" id="sobrenome" name="sobrenome">
 								</div>
+
+                                <div class="col-md-6">
+									<label for="username" class="form-label">Username</label>
+									<input type="text" class="form-control" id="username" name="username">
+								</div>
+
+
+                                <div class="col-md-6">
+									<label for="password" class="form-label">Palavra Passe</label>
+									<input type="password" class="form-control" id="password" name="password">
+								</div>
+
+                                <div class="col-md-6">
+									<label for="email" class="form-label">Endereço de Email</label>
+									<input type="email" class="form-control" id="email" name="email">
+								</div>
+
 
 								<div class="col-md-6">
 									<label for="inputCity" class="form-label">Turno</label>
@@ -35,9 +62,9 @@
 								</div>
 								<div class="col-md-4">
 									<label for="inputState" class="form-label">Funcão</label>
-									<select id="inputState" class="form-select">
-										<option selected>Choose...</option>
-										<option>...</option>
+									<select class="form-select" name="cargo" id="cargo">
+										<option selected>Gerente</option>
+										<option>Atendente</option>
 									</select>
 								</div>
 
@@ -65,44 +92,37 @@
 										<th scope="col">Código</th>
 										<th scope="col">Nome</th>
 										<th scope="col">Sobrenome</th>
-										<th scope="col">Função</th>
-										<th scope="col">Turno</th>
-										<th scope="col">Endereço</th>
-										<th scope="col">Número de Telemóvel</th>
+										<th scope="col">Username</th>
+										<th scope="col">Palavra Passe</th>
+										<th scope="col">Email</th>
+										<th scope="col">Cargo</th>
+
+                                        <th scope="col">Opções</th>
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<th scope="row">1</th>
-										<td>Mark</td>
-										<td>Otto</td>
-										<td>@mdo</td>
-										<td>Mark</td>
-										<td>Otto</td>
-										<td>@mdo</td>
+                                    @isset($funcionarios)
+                                      @foreach ($funcionarios as $func )
+                                      <tr>
+                                        <td>{{ $func->id }}</td>
+										<td>{{ $func->nome }}</td>
+										<td>{{ $func->sobrenome }}</td>
+										<td>{{ $func->username }}</td>
+										<td>{{ $func->password }}</td>
+										<td>{{ $func->email }}</td>
+										<td>{{ $func->cargo }}</td>
 
+                                        <td>
+                                            <a href="#" class="btn btn-primary">
+                                              <i class="bx bx-edit"></i>
+                                            </a>
+                                            <a href="#" class="btn btn-danger">
+                                              <i class="bx bx-trash"></i>
+                                            </a>
+                                        </td>
 									</tr>
-									<tr>
-										<th scope="row">2</th>
-										<td>Jacob</td>
-										<td>Thornton</td>
-										<td>@fat</td>
-										<td>Mark</td>
-										<td>Otto</td>
-										<td>@mdo </td>
-
-
-									</tr>
-									<tr>
-										<th scope="row">3</th>
-										<td>Larry</td>
-										<td>the Bird</td>
-										<td>@twitter</td>
-										<td>Mark</td>
-										<td>Otto</td>
-										<td>@mdo</td>
-
-									</tr>
+                                     @endforeach
+                                    @endisset
 							</table>
 						</div>
 					</div>
