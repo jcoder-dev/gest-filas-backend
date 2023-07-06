@@ -38,7 +38,7 @@ Route::get('/selecionar-servico', function(){
 Route::get('/funcionario', [FuncionarioController::class, 'index'])->name('gestao-funcionario');
 Route::post('/funcionario/adicionar', [FuncionarioController::class, 'adicionar'])->name('adicionar-funcionario');
 Route::put('/funcionario', [FuncionarioController::class, 'editar'])->name('editar-funcionario');
-Route::delete('/funcionario', [FuncionarioController::class, 'editar'])->name('deletar-funcionario');
+Route::get('/deletar-funcionario/{id}', [FuncionarioController::class, 'deletar'])->name('deletar-funcionario');
 
 
 
@@ -55,9 +55,8 @@ Route::post('/funcionario', function (){
 Route::get('/servico', [ServicoController::class, 'index'])->name('gestao-servico');
 
 
-Route::get('/adicionar-servico', function (){
-    return view('usuarios.telas-gestao.servico');
-})->name('adicionar-servico');
+Route::post('/adicionar-servico', [ServicoController::class, 'adicionar'])->name('adicionar-servico');
+Route::get('/deletar-servico/{id}', [ServicoController::class, 'deletar'])->name('deletar-servico');
 
 // Rotas de Balcao
 
