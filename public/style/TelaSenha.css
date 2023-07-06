@@ -36,6 +36,13 @@ html,body {
 }
 
 /* Definição de cores */
+
+
+.list-group-item.active {
+    background-color: #18A5FF;
+    border-color: #18A5FF;
+}
+
 .text-primary{
     color: #18A5FF!important;
 }
