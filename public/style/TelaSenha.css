@@ -1,16 +1,11 @@
 @charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@500&family=Poppins&display=swap');
 
-#btn-custom {
-    width: 150px;
-    height: 150px;
-}
-
-
-@media screen and (max-width: 576px) {
-    #btn-custom {
-        width: 75px;
-        height: 75px;
-    }
+html,body {
+    background-color: #fff;
+    align-items: center;
+    font-family: 'Kanit', sans-serif;
+    align-items: center;
 }
 
 .esconder{
@@ -19,5 +14,47 @@
 
 .mostrar{
     display: block;
+}
 
+.display-6 {
+    margin-top: 1.5rem!important;
+    font-size: calc(1.200rem + 1.2vw);
+    line-height: 1;
+    color: #212529!important;
+}
+
+#btn-custom {
+    width: 150px;
+    height: 150px;
+}
+
+@media screen and (max-width: 576px) {
+    #btn-custom {
+        width: 75px;
+        height: 75px;
+    }
+}
+
+/* Definição de cores */
+.text-primary{
+    color: #18A5FF!important;
+}
+
+.bg-info{
+    color: #18A5FF;
+}
+
+.btn-outline-primary{
+    color: #18A5FF;
+    border-color: #18A5FF;
+}
+
+.btn-outline-primary:hover{
+    border: 1px #18A5FF;
+    background-color: #18A5FF;
+}
+
+.shadow{
+    width: 60%;
+    box-shadow: 0 .5rem 1rem rgba(24, 165, 255, .5)!important;
 }

@@ -17,35 +17,29 @@
 
 <body>
     <div id="Tela1" class="container-fluid mostrar">
-        <div class="row">
-            <div class="w-75 justify-content-center bg-body m-auto p-3 mt-5 shadow rounded">
-                <div class="col-12 col-md-12 col-sm-12 d-flex mt-3">
-                    <div class="col-md-6 m-auto text-center">
-                        <h1 class="display-2 text-primary"><span
-                                class="bg-white bg-info rounded shadow-sm px-2 me-2">SG</span> Fila</h1>
-                            @yield('content')
-                    </div>
+        <div class="row shadow rounded-2 bg-white align-items-center m-auto mt-5" style="">
+            <div class="col-12 col-md-12 col-sm-12 d-flex mt-5">
+                <div class="col-8 col-md-8 col-sm-8 m-auto text-center">
+                    <h1 class="display-2 text-primary">
+                        <span class="bg-white bg-info rounded shadow-sm px-2 me-2">SG</span>Fila</h1>
+                        @yield('content')
                 </div>
-               
             </div>
+
         </div>
     </div>
-
-
-    
-
-
-  
-
-
-
 
 
     <script src="{{ asset('scripts/bibliotecas/all_icon.min.js') }}"></script>
     <script src="{{ asset('scripts/bibliotecas/jqueryLibrary.js') }}"></script>
     <script src="../scripts/bibliotecas/bootstrap.bundle.min.js"></script>
     <script src="{{ asset('scripts/telaSenha.js') }}"></script>
-
+    <script>
+        $(".list-group .list-group-item").on('click', function() {
+            $(".list-group .list-group-item").removeClass('active')
+            $(this).addClass('active')
+        })
+    </script>
 </body>
 
 </html>

@@ -7,9 +7,8 @@
 </div>
 <div class="col-12 col-md-12 col-sm-12 p-3">
      <div class="col-md-6 text-center m-auto p-2">
-        <div class="btn-group shadow-sm col-sm-12 p-3 mb-5 bg-body rounded" role="group"
-                            aria-label="Basic outlined example">
-            <a href="{{ route('selecionar-tipo') }}" type="button" id="botaoQueroSenha" class="btn btn-outline-primary">Quero uma
+        <div class="btn-group shadow-sm col-sm-12 p-3 mb-5 bg-body rounded" role="group" aria-label="Basic outlined example">
+            <a href="{{ route('selecionar-tipo') }}" type="button" id="botaoQueroSenha" class="btn btn-outline-primary bg-button-text">Quero uma
                   Senha!<i class="fas fa-arrow-circle-right"></i>
             </a>
         </div>

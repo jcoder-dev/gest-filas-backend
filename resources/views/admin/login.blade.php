@@ -23,12 +23,12 @@
 <body>
 
   <div class="container-fluid">
-    <div class="row w-50 shadow rounded-2 bg-white align-items-center m-auto">
+    <div class="row w-50 shadow rounded-2 bg-white align-items-center m-auto mt-5">
       <form class="text-center m-auto">
         <div class="col-12 col-md-12 col-sm-12 d-flex mt-4">
           <div class="col-md-6 m-auto text-center">
-              <h1 class="display-2 text-primary"><span class="bg-white bg-info rounded shadow-sm px-2 me-2">SG</span> Fila</h1>
-              <h6 class="display-6 mb-4">Seja <strong>Bem-Vindo</strong></h6>
+              <h1 class="display-2 text-primary"><span class="bg-white bg-info rounded shadow-sm px-2 me-2">SG</span>Fila</h1>
+              <h6 class="display-6 mb-4 ">Seja <strong>Bem-Vindo</strong></h6>
           </div>
         </div>
         <div class="form-floating text-secondary col-8 col-md-8 col-sm-12 m-auto">
@@ -40,8 +40,12 @@
           <label for="senha">Digite a sua senha</label>
         </div>
         <div class="btn-group shadow-sm col-8 col-md-8 col-sm-8 mt-2 p-3 bg-body rounded" role="group" aria-label="Basic outlined example">
-          <button type="submit" id="botaoEntrar"  class="btn btn-outline-primary" >Login <i class="fas fa-arrow-circle-right"></i></button>
-          <button type="button" class="btn btn-outline-danger" onclick="window.location.href = 'TelaInicial.html'">Informatição<i class="fas fa-arrow-circle-left"></i></button>
+            <button type="button" class="btn btn-outline-danger" onclick="window.location.href = 'TelaInicial.html'">
+                <i class="fas fa-arrow-circle-left"></i> Informação
+            </button>
+            <button type="submit" id="botaoEntrar"  class="btn btn-outline-primary" >
+                Login<i class="fas fa-arrow-circle-right"></i>
+            </button>
       </div>
 
       <p class="mt-5 mb-3 text-muted">&copy; 2023</p>
