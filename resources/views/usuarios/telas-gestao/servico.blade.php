@@ -10,21 +10,20 @@
                 Adicionar Novo Serviço
             </div>
             <div class="card-body">
-                <form class="row g-3">
+                <form class="row g-3" method="POST" action="{{ route('adicionar-servico') }}">
+                    @csrf
+
+                    <div class="col-md-6">
+                        <label for="codigo" class="form-label">Código do Serviço</label>
+                        <input type="text" class="form-control" id="codigo" name="codigo">
+                    </div>
+
                     <div class="col-md-6">
                         <label for="nome" class="form-label">Nome</label>
                         <input type="text" class="form-control" id="nome" name="nome">
                     </div>
 
-                    <div class="col-md-4">
-                        <label for="inputState" class="form-label">Associar ao Balcão</label>
-                        <select id="inputState" class="form-select">
-                            <option selected>Choose...</option>
-                            <option selected>1</option>
-                            <option selected>2</option>
-                            <option selected>3</option>
-                        </select>
-                    </div>
+
 
                     <div class="col-md-6">
                         <label for="descricao" class="form-label">Descrição</label>
@@ -59,32 +58,23 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Tesouraria</td>~
-                        <td>  apresentar documentação e  informações do curso do aluno</td>
-                        <td>
-                            <a href="#" class="btn btn-primary">
-                              <i class="bx bx-edit"></i>
-                            </a>
-                            <a href="#" class="btn btn-danger">
-                              <i class="bx bx-trash"></i>
-                            </a>
-                          </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Secretária</td>
-                        <td>  apresentar documentação e  informações do curso do aluno</td>
-                        <td>
-                            <a href="#" class="btn btn-primary">
-                              <i class="bx bx-edit"></i>
-                            </a>
-                            <a href="#" class="btn btn-danger">
-                              <i class="bx bx-trash"></i>
-                            </a>
-                          </td>
-                    </tr>
+                        @foreach ($servicos as $servico )
+                        <tr>
+                            <td>{{ $servico->id }}</td>
+                            <td>{{ $servico->nome }}</td>
+                            <td>{{ $servico->descricao }}</td>
+                            <td>
+                                <a href="#" class="btn btn-primary">
+                                  <i class="bx bx-edit"></i>
+                                </a>
+                                <a href="{{ route('deletar-servico', ['id'=>$servico->id]) }}" class="btn btn-danger">
+                                  <i class="bx bx-trash"></i>
+                                </a>
+                              </td>
+                        </tr>
+                        @endforeach
+
+
 
                 </table>
             </div>
