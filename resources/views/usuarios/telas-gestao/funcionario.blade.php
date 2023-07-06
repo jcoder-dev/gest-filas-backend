@@ -19,6 +19,13 @@
                                 </ul>
                             </div>
                         @endif
+                        @if ($message = Session::get('sucesso'))
+
+                        <div class="alert alert-success">
+                                {{ $message }}
+                        </div>
+
+                        @endif
 							<form class="row g-3" method="POST" action="{{ route('adicionar-funcionario') }}">
                                 @csrf
 								<div class="col-md-6">

@@ -17,14 +17,15 @@
   <script src=" {{ asset('scripts/bibliotecas/bootstrap.bundle.min.js') }}"></script>
 
   <link href="{{ asset('style/index.css') }}" rel="stylesheet">
-  <script src=" {{ asset('scripts/index.js') }}" defer></script>
 
 </head>
 <body>
 
   <div class="container-fluid">
     <div class="row w-50 shadow rounded-2 bg-white align-items-center m-auto mt-5">
-      <form class="text-center m-auto">
+    
+      <form class="text-center m-auto" method="POST" action="{{ route('funcionario.login') }}">
+        @csrf
         <div class="col-12 col-md-12 col-sm-12 d-flex mt-4">
           <div class="col-md-6 m-auto text-center">
               <h1 class="display-2 text-primary"><span class="bg-white bg-info rounded shadow-sm px-2 me-2">SG</span>Fila</h1>
@@ -32,11 +33,11 @@
           </div>
         </div>
         <div class="form-floating text-secondary col-8 col-md-8 col-sm-12 m-auto">
-          <input type="email" name="email" id="email" placeholder="Digite o seu email" class="form-control rounded"  maxlength="75" required>
+          <input type="text" name="email" id="email" placeholder="Digite o seu email" class="form-control rounded"  maxlength="75" >
           <label for="email">Digite o seu email</label>
         </div>
         <div class="form-floating text-secondary col-8 col-md-8 col-sm-12 m-auto">
-          <input type="password" name="senha" class="form-control rounded mt-2" id="senha" placeholder="Digite a sua senha" maxlength="32" minlength="8" required>
+          <input type="password" name="senha" class="form-control rounded mt-2" id="senha" placeholder="Digite a sua senha" maxlength="32" minlength="8" >
           <label for="senha">Digite a sua senha</label>
         </div>
         <div class="btn-group shadow-sm col-8 col-md-8 col-sm-8 mt-2 p-3 bg-body rounded" role="group" aria-label="Basic outlined example">
