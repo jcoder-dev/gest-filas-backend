@@ -29,6 +29,22 @@ Route::get('/selecionar-servico', function(){
     return view('usuarios.senhas.tela-tipo-servico');
 })->name('senha-servico');
 
+Route::post('/funcionario/login',  [ FuncionarioController::class, 'login'])->name('funcionario.login');
+Route::post('/funcionario/logout',  [ FuncionarioController::class, 'logout'])->name('funcionario.logout');
+
+
+
+Route::get('/requisitar-senha', function(){
+    return view('usuarios.senhas.tela-requisitar-senha');
+});
+
+Route::get('/escolher-condicao', function(){
+    return view('usuarios.senhas.tela-senha');
+})->name('selecionar-tipo');
+
+
+Route::post('/selecionar-servico', [SenhaController::class, 'selecionarServico'])->name('senha-servico');
+
 // Rotas de Funcionário
 Route::get('/funcionario', [FuncionarioController::class, 'index'])->name('gestao-funcionario');
 Route::post('/funcionario/adicionar', [FuncionarioController::class, 'adicionar'])->name('adicionar-funcionario');
