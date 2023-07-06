@@ -49,4 +49,24 @@ class FuncionarioController extends Controller
         }
 
     }
+
+    public function editar($idFuncionario)
+    {
+        $funcionario = Funcionario::find($idFuncionario);
+        if($funcionario)
+        {
+            $funcionario->nome = "";
+        }
+    }
+
+    public function deletar($idFuncionario)
+    {
+        $funcionario = Funcionario::find($idFuncionario);
+
+        if($funcionario->delete())
+            return redirect()->back()->with('message', 'Funcionario eliminado com sucesso');
+        else
+            return redirect()->back()->with('message', 'Funcionario não pode ser eliminado devio aos registros relacionados!');
+
+    }
 }
