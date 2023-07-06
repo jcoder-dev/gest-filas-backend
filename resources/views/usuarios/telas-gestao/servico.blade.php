@@ -51,6 +51,7 @@
                     <thead>
                         <tr>
                             <th scope="col">Código</th>
+                            <th scope="col">Tipo de Senha</th>
                             <th scope="col">Nome</th>
                             <th scope="col">Descrição</th>
                             <th scope="col">Opções</th>
@@ -61,6 +62,7 @@
                         @foreach ($servicos as $servico )
                         <tr>
                             <td>{{ $servico->id }}</td>
+                            <td>{{ $servico->codigo }}</td>
                             <td>{{ $servico->nome }}</td>
                             <td>{{ $servico->descricao }}</td>
                             <td>
