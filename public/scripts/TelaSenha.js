@@ -3,9 +3,6 @@ const botaoQueroSenha = document.getElementById("botaoQueroSenha");
 const botaoVoltar = document.getElementById("botaoVoltar");
 const botaoRequisitarSenha = document.getElementById("botaoRequisitarSenha");
 const opcoesRequisicao = document.querySelectorAll(".opcao");
-const tela1 = document.getElementById("Tela1");
-const tela2 = document.getElementById("Tela2");
-const tela3 = document.getElementById("Tela3");
 const divIDEstudante = document.getElementById("divIDEstudante");
 const selectorTipoCliente = document.getElementById("tipoCliente");
 let codigoRequisicao;
@@ -21,7 +18,7 @@ window.addEventListener("load", ()=>{
         {
             divIDEstudante.classList.remove("esconder");
             divIDEstudante.classList.add("d-flex");
-        }            
+        }
     });
 
     botaoQueroSenha.addEventListener("click", ()=>{
@@ -29,7 +26,7 @@ window.addEventListener("load", ()=>{
         tela2.classList.replace("esconder", "mostrar");
     });
 
-    
+
     botaoVoltar.addEventListener("click", ()=>{
         tela1.classList.replace("esconder", "mostrar");
         tela2.classList.replace("mostrar", "esconder");
@@ -48,7 +45,7 @@ window.addEventListener("load", ()=>{
         {
             if(!validarIDEstudante())
                 alert("ID com formato inválido! Verifique por favor!");
-            else 
+            else
             {
                 tela1.classList.replace("mostrar", "esconder");
                 tela2.classList.replace("mostrar", "esconder");
@@ -74,7 +71,7 @@ window.addEventListener("load", ()=>{
             reiniciar();
         }
     });
-    
+
 
 });
 
@@ -83,7 +80,7 @@ function validarIDEstudante()
     const regex = /10000\d/;
     if(!regex.test(entradaID.value))
         return false;
-    return true;        
+    return true;
 }
 
 function reiniciar()
@@ -98,5 +95,5 @@ function reiniciar()
 
 function gerarSenha()
 {
-    
+
 }
