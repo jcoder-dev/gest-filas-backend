@@ -116,7 +116,7 @@
                                             <a href="#" class="btn btn-primary">
                                               <i class="bx bx-edit"></i>
                                             </a>
-                                            <a href="#" class="btn btn-danger">
+                                            <a href="{{ route('deletar-funcionario', ['id'=>$func->id]) }}" class="btn btn-danger">
                                               <i class="bx bx-trash"></i>
                                             </a>
                                         </td>
