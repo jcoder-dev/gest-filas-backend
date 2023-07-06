@@ -61,10 +61,14 @@
 				</a>
 			</li>
 			<li>
-				<a href="../index.html" class="logout">
-					<i class='bx bxs-log-out-circle' ></i>
-					<span class="text">Logout</span>
-				</a>
+                <form method="POST" action="{{ route('funcionario.logout') }}">
+                    @csrf
+                    <button  class="logout btn btn-danger">
+                        <i class='bx bxs-log-out-circle' ></i>
+                        <span class="text">Logout</span>
+                    </button>
+                </form>
+
 			</li>
 		</ul>
 	</section>
@@ -105,6 +109,7 @@
 
 
 	<script src="{{ asset('scripts/headerMenu.js')}}"></script>
+    <script src="{{ asset('scripts/TelaSenha.js')}}"></script>
 	<script src="{{ asset('scripts/bibliotecas/jqueryLibrary.js') }}"></script>
 	<script src="{{ asset('scripts/bibliotecas/bootstrap.bundle.min.js') }}"></script>
 
