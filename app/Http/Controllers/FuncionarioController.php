@@ -38,12 +38,12 @@ class FuncionarioController extends Controller
 
         if($criarFuncionario)
         {
-             return redirect()->back()->with("message", "Funcionário registrado com sucesso");
+             return redirect()->back()->with("sucesso", "Funcionário registrado com sucesso");
         }
 
         else
         {
-            return session()->flash('message', 'Erro Inesperado: Tente novamente!');
+            return session()->flash('erro', 'Erro Inesperado: Tente novamente!');
         }
 
         }
@@ -68,5 +68,33 @@ class FuncionarioController extends Controller
         else
             return redirect()->back()->with('message', 'Funcionario não pode ser eliminado devio aos registros relacionados!');
 
+    }
+
+    public function login(Request $request)
+    {
+
+        $email = $request->email;
+        $senha = $request->senha;
+
+        $funcionario = Funcionario::where('email',$email)->get();
+
+        //dd($funcionario[0]->nome);
+
+        if($funcionario && $senha == $funcionario[0]->password)
+        {
+            $request->session()->put('email', $email);
+            return  view('usuarios.telas-gestao.dashboard');
+        }
+
+        else
+        {
+            return redirect()->back()->with('erro-login', 'Verifique as suas credenciais e tente novamente');
+        }
+    }
+
+    public function logout(Request $request)
+    {
+        $request->session()->forget('username');
+        return view('admin.login');
     }
 }
