@@ -11,7 +11,7 @@
             <ul class="list-group">
 
                 @foreach ($servicos as $servico)
-                  <a href=""><li class="list-group-item list-group-item-action rounded mt-3 opcao">{{ $servico->nome }}</li></a>
+                  <a href="{{ route('pagina-tirar-senha',  ['idServico' => $servico->id]) }}"><li class="list-group-item list-group-item-action rounded mt-3 opcao">{{ $servico->nome }}</li></a>
 
                 @endforeach
 
@@ -20,7 +20,7 @@
          <hr class="h-color mx-2">
         <div class="btn-group shadow-sm col-sm-12 p-2 bg-body rounded-circle" id="btn-custom">
             <button type="button" id="botaoRequisitarSenha" class="btn btn-outline-primary rounded-circle">
-                Requisitar Senha <br> <i class="fas fa-receipt"></i>
+                Voltar<br> <i class="fas fa-receipt"></i>
 
        </div>
     </div>

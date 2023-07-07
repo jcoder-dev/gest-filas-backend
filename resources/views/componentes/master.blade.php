@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{{ asset('style/bibliotecas/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('style/fontawesome/css/all.min.css') }}../">
 	<link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel='stylesheet'>
-	<link rel="stylesheet" href="{{ asset('style/headerMenu.css') }}">
+	<link rel="stylesheet" href="{{ asset('style/header-menu.css') }}">
 
     <link rel="stylesheet" href="{{ asset('style/datatables/datatables.css') }}">
 
@@ -21,9 +21,11 @@
 
 
 	<!-- SIDEBAR -->
-	<section id="sidebar">
+	<div id="sidebar">
 		<a href="{{ route('dashboard') }}" class="brand">
-			<img src="../imagens/icon.png" alt="">
+			<h1 class="display-2 text-primary">
+				<span class=" bg-info rounded shadow-sm px-2 me-2">SG</span>
+			</h1>
 		</a>
 		<ul class="side-menu top">
 			<li >
@@ -32,25 +34,23 @@
 					<span class="text">Dashboard</span>
 				</a>
 			</li>
-
-			<li>
-				<a href="{{ route('gestao-funcionario') }}">
-					<i class='bx bxs-doughnut-chart' ></i>
-					<span class="text">Funcionarios</span>
-				</a>
-			</li>
-			<li>
+            @if (Session::get('cargo') == "Gerente")
+            <li>
+                <a href="{{ route('gestao-funcionario') }}">
+                    <i class='bx bxs-group' ></i>
+                    <span class="text">Funcionarios</span>
+                </a>
+            </li>
+            <li>
 				<a href="{{ route('gestao-servico') }}">
-					<i class='bx bxs-group' ></i>
+					<i class='bx bxs-doughnut-chart'></i>
 					<span class="text">Serviços</span>
 				</a>
 			</li>
-			<li class="active">
-				<a href="#">
-					<i class='bx bxs-group' ></i>
-					<span class="text">Balcão</span>
-				</a>
-			</li>
+            @endif
+
+
+
 		</ul>
 		<ul class="side-menu">
 
@@ -71,7 +71,7 @@
 
 			</li>
 		</ul>
-	</section>
+	</div>
 	<!-- SIDEBAR -->
 
 
@@ -81,17 +81,16 @@
 		<!-- NAVBAR -->
 		<nav>
 			<i class='bx bx-menu' ></i>
+            <div class="mode-user">
 
+				<div class="profile">
+					<i class='bx bxs-user' ></i>
+                    @if ($message = Session::get('username'))
+					<label id="user-name" class="text-light">{{ $message }}</label>
+                    @endif
+				</div>
+			</div>
 
-			<input type="checkbox" id="switch-mode" hidden>
-			<label for="switch-mode" class="switch-mode"></label>
-			<a href="#" class="notification">
-				<i class='bx bxs-bell' ></i>
-				<span class="num">8</span>
-			</a>
-			<a href="#" class="profile">
-				<img src="imagens/people.png">
-			</a>
 		</nav>
 		<!-- NAVBAR -->
 
@@ -108,8 +107,8 @@
 	<!-- CONTENT -->
 
 
-	<script src="{{ asset('scripts/headerMenu.js')}}"></script>
-    <script src="{{ asset('scripts/TelaSenha.js')}}"></script>
+	<script src="{{ asset('scripts/header-menu.js')}}"></script>
+    <script src="{{ asset('scripts/tela-senha.js')}}"></script>
 	<script src="{{ asset('scripts/bibliotecas/jqueryLibrary.js') }}"></script>
 	<script src="{{ asset('scripts/bibliotecas/bootstrap.bundle.min.js') }}"></script>
 
@@ -121,7 +120,7 @@
 	<script src="https://code.jquery.com/jquery-3.7.0.min.js"
 		integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 
-    <script src="{{ asset('scripts/dashboardFuncionario.js') }}"></script>
+    <script src="{{ asset('scripts/dashboard-funcionario.js') }}"></script>
 
 
 

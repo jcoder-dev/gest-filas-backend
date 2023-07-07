@@ -20,7 +20,7 @@ class ServicoController extends Controller
     {
         if($requestServico)
             {
-                
+
                 $data = [
                     "codigo" => $requestServico->codigo,
                     "nome" => $requestServico->nome,
@@ -36,6 +36,7 @@ class ServicoController extends Controller
 
     public function atualizar()
     {
+        
 
     }
 

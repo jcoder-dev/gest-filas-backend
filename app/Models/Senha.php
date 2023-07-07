@@ -10,5 +10,5 @@ class Senha extends Model
     use HasFactory;
     protected $table = "senhas";
 
-    protected $fillable = ['estado', 'prioridade', 'servico_id'];
+    protected $fillable = ['estado', 'prioridade', 'servico_id', 'codigo', 'data_criacao'];
 }

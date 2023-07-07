@@ -13,4 +13,6 @@ class Endereco extends Model
 
     protected $fillable = ['nome', 'sobrenome', 'username', 'email', 'password', 'cargo'];
 
+
+
 }

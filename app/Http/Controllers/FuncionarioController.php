@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\FuncionarioRequest;
 use App\Models\Funcionario;
+use App\Models\Senha;
 use Illuminate\Http\Request;
-
-
+use Illuminate\Support\Facades\DB;
 
 class FuncionarioController extends Controller
 {
@@ -76,20 +76,33 @@ class FuncionarioController extends Controller
         $email = $request->email;
         $senha = $request->senha;
 
+        $senhas = DB::select('select * from senhas where DAYOFMONTH(data_criacao) = DAYOFMONTH(NOW()) order by created_at');
+
+
         $funcionario = Funcionario::where('email',$email)->get();
 
-        //dd($funcionario[0]->nome);
-
+        if(isset($funcionario))
+        {
         if($funcionario && $senha == $funcionario[0]->password)
         {
             $request->session()->put('email', $email);
-            return  view('usuarios.telas-gestao.dashboard');
+            $request->session()->put('username', $funcionario[0]->username);
+            $request->session()->put('cargo', $funcionario[0]->cargo);
+
+            return  view('usuarios.telas-gestao.dashboard', compact('senhas'));
         }
 
         else
         {
-            return redirect()->back()->with('erro-login', 'Verifique as suas credenciais e tente novamente');
+            return redirect('/')->with('erro','Erro: Verifique as suas credenciais e tente novamente!');
+
         }
+        }
+
+
+
+
+
     }
 
     public function logout(Request $request)

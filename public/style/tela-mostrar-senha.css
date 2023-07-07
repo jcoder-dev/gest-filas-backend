@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap" rel="stylesheet');
+
+:root {
+	--Kanit: 'Kanit', sans-serif;
+
+	--light: #F9F9F9;
+  --white: #fff;
+	--blue: #0C527F;
+}
+
+body {
+  font-family: var(--Kanit), sans-serif;
+  background-color: var(--light);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.senha-atendimento {
+  background-color: var(--white);
+  padding: 20px;
+  flex-basis: 70%;
+  margin-right: -20px;
+}
+
+.cabecalho {
+  background-color: var(--light);
+  padding: 20px;
+  margin-bottom: 20px;
+  margin-left: -20px;
+  margin-top: -20px; 
+  width: calc(100% + 20px);
+  height: 40px;
+}
+
+.cabecalho h1 {
+  font-size: x-large;
+  padding-left: 20px;
+  margin: 2px;
+  color: var(--blue);
+}
+
+.senha-atendimento h2 {
+  font-size: xx-large;
+  margin-top: 0px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.senha-atendimento .senha {
+  font-size: 104px;
+  font-weight: bold;
+  margin-top: 130px;
+  margin-bottom: 35px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.senha-atendimento .balcao {
+  font-size: xx-large;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.proximas-senhas {
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 20px;
+  flex-basis: 30%;
+}
+
+.proximas-senhas h2 {
+  font-size: xx-large;
+  margin-top: 0;
+  margin-bottom: 35px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.proximas-senhas ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.proximas-senhas li {
+  margin-bottom: 40px;
+  font-size: x-large;
+  text-align: center;
+}
+
+.proximas-senhas li:before {
+  margin-right: 5px;
+}

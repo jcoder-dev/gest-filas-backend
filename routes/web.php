@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FuncionarioController;
 use App\Http\Controllers\ServicoController;
 use App\Http\Controllers\SenhaController;
+use App\Http\Middleware\CustomAuth;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,18 +26,25 @@ Route::get('/requisitar-senha', function(){
 Route::get('/escolher-uma-opcao', function(){
     return view('usuarios.senhas.tela-senha');
 })->name('selecionar-tipo');
-Route::get('/selecionar-servico', function(){
-    return view('usuarios.senhas.tela-tipo-servico');
-})->name('senha-servico');
+
 
 Route::post('/funcionario/login',  [ FuncionarioController::class, 'login'])->name('funcionario.login');
 Route::post('/funcionario/logout',  [ FuncionarioController::class, 'logout'])->name('funcionario.logout');
 
+Route::get('/selecionar-servico', function(){
+    return view('usuarios.senhas.tela-tipo-servico');
+})->name('senha-servico');
 
 
 Route::get('/requisitar-senha', function(){
     return view('usuarios.senhas.tela-requisitar-senha');
 });
+
+Route::get('/pagina-tirar-senha/{idServico}', [SenhaController::class, 'tirarSenha'])->name('pagina-tirar-senha');
+
+
+Route::post('/gerar-senha', [SenhaController::class, 'gerarSenha'])->name('gerar-senha');
+
 
 Route::get('/escolher-condicao', function(){
     return view('usuarios.senhas.tela-senha');
@@ -45,7 +53,12 @@ Route::get('/escolher-condicao', function(){
 
 Route::post('/selecionar-servico', [SenhaController::class, 'selecionarServico'])->name('senha-servico');
 
-// Rotas de Funcionário
+
+
+Route::middleware([CustomAuth::class])->group(function () {
+
+
+    // Rotas de Funcionário
 Route::get('/funcionario', [FuncionarioController::class, 'index'])->name('gestao-funcionario');
 Route::post('/funcionario/adicionar', [FuncionarioController::class, 'adicionar'])->name('adicionar-funcionario');
 Route::put('/funcionario', [FuncionarioController::class, 'editar'])->name('editar-funcionario');
@@ -70,9 +83,9 @@ Route::get('/adicionar-balcao', function (){
 
 
 // Gestão de Senhas e Filas
-Route::get('/dashboard', function (){
-    return view('usuarios.telas-gestao.dashboard');
-})->name('dashboard');
+Route::get('/dashboard', [SenhaController::class, 'index'])->name('dashboard');
+
+});
 
 
 

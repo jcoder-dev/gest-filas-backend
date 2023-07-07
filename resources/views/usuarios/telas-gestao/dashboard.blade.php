@@ -56,12 +56,19 @@
                         <th>Código</th>
                         <th>Hora de Retiro</th>
                         <th>Estado</th>
-                        <th>Balcão</th>
+
                     </tr>
                 </thead>
-                <tbody id="registrosTabela">
+                <tbody id="senhas">
+                    @foreach ($senhas as $senha )
+                           <tr>
+                             <td>{{ $senha->codigo }}</td>
+                             <td>{{ $senha->created_at }}</td>
+                             <td>{{ $senha->estado }}</td>
 
-                    </tr> -->
+                           </tr>
+                    @endforeach
+
                 </tbody>
             </table>
         </div>

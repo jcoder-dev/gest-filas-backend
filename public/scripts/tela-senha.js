@@ -1,10 +1,10 @@
-const entradaID = document.getElementById("inputIDEstudante");
+const entradaID = document.getElementById("idEstudante");
 const botaoQueroSenha = document.getElementById("botaoQueroSenha");
 const botaoVoltar = document.getElementById("botaoVoltar");
 const botaoRequisitarSenha = document.getElementById("botaoRequisitarSenha");
 const opcoesRequisicao = document.querySelectorAll(".opcao");
 const divIDEstudante = document.getElementById("divIDEstudante");
-const selectorTipoCliente = document.getElementById("tipoCliente");
+const selectorTipoCliente = document.getElementById("tipo-usuario");
 let codigoRequisicao;
 
 window.addEventListener("load", ()=>{

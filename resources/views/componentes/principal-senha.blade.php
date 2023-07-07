@@ -12,7 +12,7 @@
     <link rel="shortcut icon" href="{{ asset('imagens/icon.png') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('style/bibliotecas/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('style/fontawesome/css/all.min.css') }}../">
-    <link rel="stylesheet" href="{{ asset('/style/telaSenha.css') }}">
+    <link rel="stylesheet" href="{{ asset('style/tela-senha.css') }}">
 </head>
 
 <body>
@@ -33,7 +33,7 @@
     <script src="{{ asset('scripts/bibliotecas/all_icon.min.js') }}"></script>
     <script src="{{ asset('scripts/bibliotecas/jqueryLibrary.js') }}"></script>
     <script src="../scripts/bibliotecas/bootstrap.bundle.min.js"></script>
-    <script src="{{ asset('scripts/telaSenha.js') }}"></script>
+    <script src="{{ asset('scripts/tela-senha.js') }}"></script>
     <script>
         $(".list-group .list-group-item").on('click', function() {
             $(".list-group .list-group-item").removeClass('active')

@@ -23,7 +23,7 @@
 
   <div class="container-fluid">
     <div class="row w-50 shadow rounded-2 bg-white align-items-center m-auto mt-5">
-    
+
       <form class="text-center m-auto" method="POST" action="{{ route('funcionario.login') }}">
         @csrf
         <div class="col-12 col-md-12 col-sm-12 d-flex mt-4">
@@ -32,7 +32,13 @@
               <h6 class="display-6 mb-4 ">Seja <strong>Bem-Vindo</strong></h6>
           </div>
         </div>
+        @if ($message = Session::get('erro'))
+        <div class="alert alert-danger">
+            {{ $message }}
+        </div>
+        @endif
         <div class="form-floating text-secondary col-8 col-md-8 col-sm-12 m-auto">
+
           <input type="text" name="email" id="email" placeholder="Digite o seu email" class="form-control rounded"  maxlength="75" >
           <label for="email">Digite o seu email</label>
         </div>
