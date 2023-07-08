@@ -28,7 +28,7 @@ Route::get('/escolher-uma-opcao', function(){
 })->name('selecionar-tipo');
 
 
-Route::post('/funcionario/login',  [ FuncionarioController::class, 'login'])->name('funcionario.login');
+Route::post('/',  [ FuncionarioController::class, 'login'])->name('funcionario.login');
 Route::post('/funcionario/logout',  [ FuncionarioController::class, 'logout'])->name('funcionario.logout');
 
 Route::get('/selecionar-servico', function(){
@@ -42,8 +42,13 @@ Route::get('/requisitar-senha', function(){
 
 Route::get('/pagina-tirar-senha/{idServico}', [SenhaController::class, 'tirarSenha'])->name('pagina-tirar-senha');
 
+Route::get('tela-mostrar-senha', [SenhaController::class, 'mostrarSenha'])->name('mostrar-senha');
+
+
 
 Route::post('/gerar-senha', [SenhaController::class, 'gerarSenha'])->name('gerar-senha');
+
+Route::get('/senhas', [SenhaController::class, 'listar'])->name('senhas-listar');
 
 
 Route::get('/escolher-condicao', function(){
@@ -69,6 +74,8 @@ Route::post('/funcionario', function (){
 
 
 
+
+
 // Rotas de Serviço
 
 Route::get('/servico', [ServicoController::class, 'index'])->name('gestao-servico');
@@ -82,8 +89,13 @@ Route::get('/adicionar-balcao', function (){
 })->name('adicionar-balcao');
 
 
+
+
 // Gestão de Senhas e Filas
 Route::get('/dashboard', [SenhaController::class, 'index'])->name('dashboard');
+
+Route::post('/alterar-estado-senha/{codigo}', [SenhaController::class, 'alterarEstado'])->name('alterar.estado');
+
 
 });
 

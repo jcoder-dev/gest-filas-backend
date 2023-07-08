@@ -6,7 +6,7 @@
 
     <div class="head-title">
         <div class="left">
-            <h1>Balção - 1</h1>
+
             <ul class="breadcrumb">
                 <li>
                     <a href="#">Dashboard</a>
@@ -21,36 +21,29 @@
 
     <ul class="box-info">
         <li>
-            <i class='bx bxs-calendar-check' ></i>
-            <span class="text">
-                <h3>14</h3>
-                <p>Total de pessoas que Atendi</p>
+        <i class='bx bxs-group' ></i>
+                <span class="text">
+                <h3>{{ $espera  }}</h3>
+                <p>Total de Pessoas em ESpera</p>
             </span>
         </li>
         <li>
-            <i class='bx bxs-group' ></i>
-            <span class="text">
-                <h3>32</h3>
-                <p>Total de Pessoas Atendidas</p>
+        <i class='bx bxs-group' ></i>
+                <span class="text">
+                <h3>{{ $atendimento  }}</h3>
+                <p>Total Em Atendimento</p>
             </span>
         </li>
-        <li>
-            <i class='bx bxs-dollar-circle' ></i>
-            <span class="text">
-                <h3>43</h3>
-                <p>Total de Pessoas no Dia</p>
-            </span>
-        </li>
+      
     </ul>
-
 
     <div class="table-data">
         <div class="order">
             <div class="head ">
                 <h3>Fila de Pessoas em Espera...</h3>
-                <button type="button" id="botaoProximo" class="btn btn-outline-primary">Próximo</button>
+                <button type="button" id="botaoProximo" class="btn btn-outline-primary btnProximo">Próximo</button>
             </div>
-            <table>
+            <table id="table-senhas">
                 <thead>
                     <tr>
                         <th>Código</th>
@@ -60,20 +53,12 @@
                     </tr>
                 </thead>
                 <tbody id="senhas">
-                    @foreach ($senhas as $senha )
-                           <tr>
-                             <td>{{ $senha->codigo }}</td>
-                             <td>{{ $senha->created_at }}</td>
-                             <td>{{ $senha->estado }}</td>
 
-                           </tr>
-                    @endforeach
 
                 </tbody>
             </table>
         </div>
     </div>
-
 
 
 @endsection

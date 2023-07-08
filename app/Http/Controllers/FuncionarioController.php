@@ -19,6 +19,13 @@ class FuncionarioController extends Controller
 
     }
 
+    public function listar(){
+
+        $funcionarios = Funcionario::all();
+        return response()->json($funcionarios);
+
+    }
+
     public function adicionar(FuncionarioRequest $funcionarioRequest)
     {
 
@@ -89,7 +96,14 @@ class FuncionarioController extends Controller
             $request->session()->put('username', $funcionario[0]->username);
             $request->session()->put('cargo', $funcionario[0]->cargo);
 
-            return  view('usuarios.telas-gestao.dashboard', compact('senhas'));
+            $senhasEspera = DB::select('select  COUNT(*) as espera from senhas where DAYOFMONTH(data_criacao) = DAYOFMONTH(NOW()) and estado = "Em Espera" order by created_at');
+            $espera = $senhasEspera[0]->espera;
+            $emAtendimento = $senhasEspera = DB::select('select  COUNT(*) as atendimento from senhas where DAYOFMONTH(data_criacao) = DAYOFMONTH(NOW()) and estado = "Em Atendimento" order by created_at');
+
+            $atendimento = $emAtendimento[0]->atendimento;
+
+
+            return  view('usuarios.telas-gestao.dashboard', compact('senhas', 'espera', 'atendimento'));
         }
 
         else

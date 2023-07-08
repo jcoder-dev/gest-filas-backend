@@ -6,12 +6,14 @@
     <meta name="description" content="Dados Balcão, Sistema de Gestão de Fila da Universidade Católica - Ucan">
     <meta name="author" content="Belger, Cliana Malange, Erivelto Silva, Jorge Costa, Rita Mulato">
     <meta name="generator" content="Tela dos Dados do Balcão">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
 	<title>SGF - @yield('title')</title>
     <link rel="shortcut icon" href="{{ asset('imagens/icon.png') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('style/bibliotecas/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('style/fontawesome/css/all.min.css') }}../">
 	<link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel='stylesheet'>
 	<link rel="stylesheet" href="{{ asset('style/header-menu.css') }}">
+
 
     <link rel="stylesheet" href="{{ asset('style/datatables/datatables.css') }}">
 
@@ -54,12 +56,6 @@
 		</ul>
 		<ul class="side-menu">
 
-			<li>
-				<a href="">
-					<i class='bx bxs-cog' ></i>
-					<span class="text">Sobre</span>
-				</a>
-			</li>
 			<li>
                 <form method="POST" action="{{ route('funcionario.logout') }}">
                     @csrf
@@ -107,11 +103,12 @@
 	<!-- CONTENT -->
 
 
+
 	<script src="{{ asset('scripts/header-menu.js')}}"></script>
     <script src="{{ asset('scripts/tela-senha.js')}}"></script>
 	<script src="{{ asset('scripts/bibliotecas/jqueryLibrary.js') }}"></script>
 	<script src="{{ asset('scripts/bibliotecas/bootstrap.bundle.min.js') }}"></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
@@ -132,7 +129,7 @@
 
     <script>
 		$(document).ready(function () {
-			$('#table').DataTable({
+			tabela = $('#table').DataTable({
 				language: {
 					lengthMenu: 'Mostrando _MENU_ registros por página',
 					zeroRecords: 'Nada encontrado - Estamos resolvendo...',
@@ -151,6 +148,9 @@
 
 				});
 		});
+
+
+
 	</script>
 
 </body>

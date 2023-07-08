@@ -24,7 +24,24 @@ class ServicoRequest extends FormRequest
     public function rules()
     {
         return [
-            
+
+            'nome' => 'required| unique:servicos',
+            'descricao' => 'required',
+            'codigo' => 'required| unique:servicos'
+
         ];
+    }
+
+    public function messages()
+    {
+        return [
+            'nome.required' => 'O campo nome não pode estar em brano',
+            'descricao.required' => 'O campo descricao não pode estar em branco',
+            'codigo.required' => 'O campo código não pode estar em branco',
+            'codigo.unique' => 'O código deve ser único',
+            'nome.unique' => 'O nome deve ser único'
+
+        ];
+
     }
 }

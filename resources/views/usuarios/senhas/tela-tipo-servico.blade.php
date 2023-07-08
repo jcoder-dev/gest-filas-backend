@@ -3,8 +3,8 @@
 @section('content')
 <div class="col-12 col-md-12 col-sm-12 p-3">
     <div class="col-md-12 text-center m-auto">
-        <p>Selecione uma das opções de <i> Serviços</i> para poder ser <i>Atendido</i> <strong>Azem
-             Mbora Baby, upsi upsi chegou</strong>.</p>
+        <p>REQUISITE<i> ABAIXO O SERVIÇO</i> DESEJADO <strong>
+             </strong>.</p>
     </div>
     <div class="col-md-10 col-sm-10 text-center m-auto">
         <div class="col-10 text-center m-auto">

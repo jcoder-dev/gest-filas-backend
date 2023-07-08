@@ -19,7 +19,6 @@
         <ul id="proximas-senhas-lista"></ul>
     </div>
   </div>
-  <script src="../../../public/scripts/telaPrincipal.js"></script>
 </body>
 </html>
 
